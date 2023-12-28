@@ -1,56 +1,41 @@
-# taskharbor
-# TaskHarbor - Node.js EJS MongoDB Todo App
+# TaskHarbor - Python ToDo App with Flask
 
-## Overview
-
-**TaskHarbor** is a web application built using Node.js, EJS templating, and MongoDB. It provides a simple and efficient platform for managing your tasks and to-do lists.
+TaskHarbor is a simple ToDo app built with Flask. Manage your tasks, mark them as complete, and stay organized.
 
 ## Features
 
-- **Task Management:** Create, edit, and delete tasks effortlessly.
-- **Prioritization:** Set priorities for tasks to focus on what matters most.
-- **Completion Tracking:** Mark tasks as completed to keep track of your progress.
-- **Responsive Design:** Enjoy a seamless experience on various devices with a responsive interface.
+- **Task Management:** Add, edit, and mark tasks as complete.
+- **User-Friendly Interface:** Intuitive design for easy task management.
+- **Flask Web Framework:** Utilizes Flask for creating a web application.
 
 ## Prerequisites
 
-Make sure you have the following installed before running the application:
+Make sure you have Python and pip installed. You can install the required packages using the following command:
 
-- **Node.js:** [Download Node.js](https://nodejs.org/)
-- **MongoDB:** [Install MongoDB](https://docs.mongodb.com/manual/installation/)
+```bash
+pip install -r requirements.txt
+Installation
+Clone the repository:
 
-## Installation
-
-1. **Clone the repository:**
-
-   ```bash
-   git clone https://github.com/your-username/TaskHarbor.git
+bash
+Copy code
+git clone https://github.com/your-username/TaskHarbor.git
 Install dependencies:
 
 bash
 Copy code
 cd TaskHarbor
-npm install
-Set up environment variables:
-
-Create a .env file in the root directory and provide the following values:
-
-env
-Copy code
-PORT=3000
-MONGODB_URI=your_mongodb_connection_string
-SESSION_SECRET=your_session_secret
+pip install -r requirements.txt
 Start the application:
 
 bash
 Copy code
-npm start
-The app will be accessible at http://localhost:3000.
+python app.py
+The app will be accessible at http://localhost:5000.
 
 Usage
-Visit http://localhost:3000 in your web browser.
-Sign up for a new account or log in if you already have one.
-Start managing your tasks and stay organized.
+Visit http://localhost:5000 in your web browser.
+Add, edit, and mark tasks as complete.
 Contributing
 Contributions are welcome! Feel free to open issues or submit pull requests.
 
@@ -58,4 +43,21 @@ License
 This project is licensed under the MIT License.
 
 Acknowledgments
-Thanks to the Node.js, EJS, and MongoDB communities for their fantastic tools and documentation.
+Thanks to the Flask community for their fantastic web framework.
+
+makefile
+Copy code
+
+This README assumes that you have a file named `requirements.txt` with the specified package versions:
+
+```plaintext
+blinker==1.7.0
+click==8.1.7
+colorama==0.4.6
+Flask==3.0.0
+gunicorn==21.2.0
+itsdangerous==2.1.2
+Jinja2==3.1.2
+MarkupSafe==2.1.3
+packaging==23.2
+Werkzeug==3.0.1
