@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskHarbor</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #00238c;
+            background-image: url("https://www.transparenttextures.com/patterns/brushed-alum.png");
+            margin: 20px;
+        }
+         .harbor {
+            color: #red; /* Blue color for "Task" */
+         }
+
+         h1 {
+            color: #007bff;
+            text-align: center;
+            position: relative;
+            font-size: 2em;
+        }
+
+        h1::before {
+            content: '';
+            position: absolute;
+            width: 70%;
+            height: 100%;
+            border-radius: 5px;
+            background: radial-gradient(circle, rgba(0, 123, 255, 0.6) 0%, rgba(0, 123, 255, 0) 70%);
+            animation: glow 2s linear infinite;
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 5px 0px rgba(0, 123, 255, 0.6);
+            }
+            50% {
+                box-shadow: 0 0 20px 10px rgba(0, 123, 255, 0.2);
+            }
+            100% {
+                box-shadow: 0 0 5px 0px rgba(0, 123, 255, 0.6);
+            }
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #fff;
+            border: 1px solid #ced4da;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        form {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 60%;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            margin-left: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1><span class="harbor">Task</span>Harbor</h1>
+    <ul>
+        {% for todo in todos %}
+        <li>
+            {{ todo }}
+            <button type="button" onclick="window.location.href='/delete/{{ loop.index0 }}'">Delete</button>
+            <button type="button" onclick="window.location.href='/edit/{{ loop.index0 }}'">Edit</button>
+        </li>
+        {% endfor %}
+    </ul>
+    <form method="POST" action="/add">
+        <input type="text" name="todo_item" placeholder="Add a new task">
+        <input type="submit" value="Add">
+    </form>
+    <footer>
+        &copy; 2023 Fortune Ewuru | GitHub: <a href="https://github.com/ewurufortune" target="_blank">ewurufortune</a>
+    </footer>
+</body>
+</html>
